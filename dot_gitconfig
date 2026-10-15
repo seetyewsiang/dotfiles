@@ -2,3 +2,5 @@
 [user]
 	name = Seet Yew Siang
 	email = 85851650+seetyewsiang@users.noreply.github.com
+[commit]
+	template = ~/.gitmessage

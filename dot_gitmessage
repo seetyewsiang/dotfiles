@@ -1,0 +1,14 @@
+
+
+# Subject: imperative, capitalized, no period, <= 50 chars
+#   "If applied, this commit will <subject>"
+#
+# Body (after one blank line): what and why, not how. Wrap at 72.
+#   - What was wrong before, and how it works now
+#   - Why this approach
+#
+# Trailers last, after a blank line, e.g.
+#   Resolves: #123
+#   See also: #456
+#
+# https://cbea.ms/git-commit/
