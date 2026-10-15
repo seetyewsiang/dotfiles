@@ -9,7 +9,6 @@
     "plugin-dev@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true,
-    "code-modernization@claude-plugins-official": true,
     "unity@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
