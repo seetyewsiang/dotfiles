@@ -46,6 +46,8 @@ Either way:
 ## After committing
 
 - Check `git status` and `git log -1` to confirm the result.
+- Report each commit to the user: its hash, the files committed (from
+  `git show --stat HEAD`), and the full commit message.
 - Never amend, rebase or force-push commits that are already pushed unless
   the user asks; fix them with a new commit.
 - If a pre-commit hook fails, fix the problem and commit again. Do not use
