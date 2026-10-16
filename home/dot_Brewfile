@@ -12,6 +12,7 @@ cask "docker-desktop"
 cask "google-chrome"
 cask "google-gemini"            # Google Gemini desktop app
 cask "protonvpn"
+cask "scroll-reverser"          # reverses mouse/trackpad scroll direction separately
 cask "teamviewer"               # remote desktop
 cask "unity-hub"                # installs and manages Unity editors
 cask "utm"                      # virtual machines
