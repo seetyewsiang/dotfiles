@@ -17,8 +17,15 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       }
+    },
+    "agent-tools": {
+      "source": {
+        "source": "github",
+        "repo": "vale-cli/agent-tools"
+      }
     }
   },
+  "outputStyle": "Concise",
   "showThinkingSummaries": true,
   "theme": "dark",
   "autoCompactEnabled": true
