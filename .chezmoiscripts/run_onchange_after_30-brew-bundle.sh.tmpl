@@ -9,4 +9,5 @@ else
   brew=/usr/local/bin/brew
 fi
 
+# shellcheck disable=SC1083 # the braces are chezmoi template syntax
 "$brew" bundle --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}
