@@ -3,4 +3,10 @@
 # Brewfile hash: {{ include "Brewfile" | sha256sum }}
 set -eu
 
-/opt/homebrew/bin/brew bundle --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}
+if [ "$(uname -m)" = arm64 ]; then
+  brew=/opt/homebrew/bin/brew
+else
+  brew=/usr/local/bin/brew
+fi
+
+"$brew" bundle --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}

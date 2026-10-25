@@ -1,6 +1,6 @@
 # dotfiles
 
-My macOS (Apple Silicon) setup, managed with [chezmoi](https://www.chezmoi.io/).
+My macOS setup (Apple Silicon and Intel), managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Install on a new Mac
 
