@@ -1,5 +1,6 @@
 # CLI tools
 brew "gh"                       # GitHub CLI
+brew "git-lfs"                  # Git Large File Storage
 brew "mas"                      # Mac App Store CLI
 
 # Apps (Homebrew casks)
