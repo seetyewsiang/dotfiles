@@ -2,4 +2,4 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 
 
 # Unity CLI
-. "$HOME/.unity/env"
+[ -f "$HOME/.unity/env" ] && . "$HOME/.unity/env"
