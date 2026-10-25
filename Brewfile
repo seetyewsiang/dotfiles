@@ -18,6 +18,5 @@ cask "vlc"                      # media player
 
 # App Store apps (must be signed in to the App Store first)
 mas "Amphetamine", id: 937984704             # keeps Mac awake
-mas "Numbers Creator Studio", id: 361304891  # Apple Numbers spreadsheets
 mas "WeChat", id: 836500024
 mas "WhatsApp", id: 310633997
