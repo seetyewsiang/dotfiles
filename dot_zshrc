@@ -1,5 +1,5 @@
-eval "$(/Users/seet/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 
 # Unity CLI
-. "/Users/seet/.unity/env"
+. "$HOME/.unity/env"
