@@ -1,4 +1,5 @@
 # CLI tools
+brew "bash"                     # bash 5 (macOS ships 3.2)
 brew "gh"                       # GitHub CLI
 brew "git-lfs"                  # Git Large File Storage
 brew "mas"                      # Mac App Store CLI
