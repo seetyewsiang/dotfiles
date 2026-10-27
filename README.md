@@ -28,7 +28,7 @@ install.
 | `dot_gitmessage`       | `~/.gitmessage`          | Commit template ([seven rules][beams])     |
 | `dot_config/gh/`       | `~/.config/gh/`          | GitHub CLI config                          |
 | `dot_config/git/`      | `~/.config/git/`         | Global gitignore                           |
-| `dot_config/mise/`     | `~/.config/mise/`        | Default tool versions (Node LTS)           |
+| `dot_config/mise/`     | `~/.config/mise/`        | Node LTS and CLI tools, via mise           |
 | `private_dot_claude/`  | `~/.claude/`             | Claude Code settings and `CLAUDE.md`       |
 | `Brewfile`             | not copied               | CLI tools, casks and App Store apps        |
 | `install.sh`           | not copied               | Bootstrap script                           |

@@ -1,0 +1,17 @@
+[tools]
+node = "lts"
+
+# CLI tools
+bat = "latest"      # cat with syntax highlighting
+buf = "latest"      # Protocol Buffers tooling
+{{- if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") }}
+delta = "0.18.2"    # git diff viewer; last release with an Intel Mac build
+{{- else }}
+delta = "latest"    # git diff viewer
+{{- end }}
+fd = "latest"       # find files by name
+fzf = "latest"      # fuzzy finder
+gh = "latest"       # GitHub CLI
+ripgrep = "latest"  # search file contents (rg)
+uv = "latest"       # Python packages and projects
+zoxide = "latest"   # jump to frequent folders (z)
