@@ -1,0 +1,12 @@
+#!/bin/sh
+# Install everything in ~/.Brewfile. Re-runs whenever the Brewfile changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -eu
+
+if [ "$(uname -m)" = arm64 ]; then
+  brew=/opt/homebrew/bin/brew
+else
+  brew=/usr/local/bin/brew
+fi
+
+"$brew" bundle --global
