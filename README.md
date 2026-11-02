@@ -8,8 +8,9 @@ My macOS setup (Apple Silicon and Intel), managed with [chezmoi](https://www.che
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/seetyewsiang/dotfiles/main/install.sh)"
 ```
 
-This installs chezmoi to `~/.local/bin`, clones this repo and applies it. On
-first apply, chezmoi also:
+This installs chezmoi to `~/.local/bin` if it is missing, then runs
+`chezmoi init --apply seetyewsiang`. chezmoi clones this repo to
+`~/.local/share/chezmoi` and applies it. On first apply, chezmoi also:
 
 1. Installs [Homebrew](https://brew.sh/) if it is missing.
 2. Installs [mise](https://mise.jdx.dev/) to `~/.local/bin` if it is missing.
