@@ -18,6 +18,12 @@
         "repo": "anthropics/claude-plugins-official"
       }
     },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
     "agent-tools": {
       "source": {
         "source": "github",
@@ -25,8 +31,11 @@
       }
     }
   },
-  "outputStyle": "Concise",
   "showThinkingSummaries": true,
   "theme": "dark",
-  "autoCompactEnabled": true
+  "autoCompactEnabled": true,
+  "switchModelsOnFlag": true,
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true,
+  "outputStyle": "Concise"
 }

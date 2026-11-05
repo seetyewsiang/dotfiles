@@ -1,0 +1,2 @@
+# Real files behind symlinks in $HOME (see symlink_*.tmpl). Not installed directly.
+symlinked
