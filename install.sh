@@ -3,13 +3,13 @@
 #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/seetyewsiang/dotfiles/main/install.sh)"
 set -eu
 
-BIN_DIR="$HOME/.local/bin"
+bin_dir="$HOME/.local/bin"
 
 if command -v chezmoi >/dev/null 2>&1; then
   chezmoi=$(command -v chezmoi)
 else
-  sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$BIN_DIR"
-  chezmoi="$BIN_DIR/chezmoi"
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$bin_dir"
+  chezmoi="$bin_dir/chezmoi"
 fi
 
 exec "$chezmoi" init --apply seetyewsiang
