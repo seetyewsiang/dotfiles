@@ -9,3 +9,15 @@ set -eu
 # left at the app's defaults, which is why they aren't set here.
 defaults write com.pilotmoon.scroll-reverser InvertScrollingOn -bool true
 defaults write com.pilotmoon.scroll-reverser ShowDiscreteScrollOptions -bool true
+
+# Finder Quick Actions: macOS registers new ones switched off. Turn on
+# "Open in VS Code" for the right-click menu, Quick Actions, and Services.
+defaults write pbs NSServicesStatus -dict-add \
+  '"(null) - Open in VS Code - runWorkflowAsService"' \
+  '<dict><key>presentation_modes</key><dict>
+     <key>ContextMenu</key><true/>
+     <key>FinderPreview</key><true/>
+     <key>ServicesMenu</key><true/>
+     <key>TouchBar</key><false/>
+   </dict></dict>'
+/System/Library/CoreServices/pbs -update
