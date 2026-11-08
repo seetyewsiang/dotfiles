@@ -12,4 +12,7 @@ else
   chezmoi="$bin_dir/chezmoi"
 fi
 
-exec "$chezmoi" init --apply seetyewsiang
+# A fresh Mac has no git yet: /usr/bin/git is a stub that only offers to
+# install the Command Line Tools. Clone with chezmoi's builtin git instead;
+# the Homebrew install script installs the Command Line Tools afterwards.
+exec "$chezmoi" init --apply --use-builtin-git true seetyewsiang
