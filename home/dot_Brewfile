@@ -9,6 +9,7 @@ cask "betterdisplay"            # display resolution & scaling manager
 cask "beyond-compare@4"         # file & folder diff tool
 cask "claude"
 cask "docker-desktop"
+cask "ghostty"                  # GPU-accelerated terminal
 cask "google-chrome"
 cask "google-gemini"            # Google Gemini desktop app
 cask "protonvpn"

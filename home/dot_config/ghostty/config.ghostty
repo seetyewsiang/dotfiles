@@ -1,0 +1,12 @@
+# Ghostty config. Every option, with docs:
+#   ghostty +show-config --default --docs
+# Reload with Cmd+Shift+, after editing.
+
+# Follow macOS light/dark appearance.
+theme = light:GitHub Light Default,dark:GitHub Dark Default
+
+# Let Option work as Alt, for shell shortcuts like Alt+B / Alt+F.
+macos-option-as-alt = true
+
+# Reopen windows and tabs from the last session.
+window-save-state = always
