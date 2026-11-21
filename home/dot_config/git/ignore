@@ -1,2 +1,37 @@
-# macOS Finder metadata
+# Global gitignore, read by Git from ~/.config/git/ignore.
+#
+# Only files that this Mac and the tools on it create on their own, and
+# that no project would ever want committed. Anything a project might
+# share (.vscode/, .env, *.patch, build output) belongs in that repo's
+# own .gitignore instead. Rationale for every line, and what was left out:
+# https://github.com/seetyewsiang/dotfiles/blob/main/docs/gitignore.md
+
+# macOS
 .DS_Store
+._*
+.AppleDouble
+
+# Vim swap files (vi is Git's editor here; no core.editor is set)
+.*.sw[op]
+
+# Leftovers from git mergetool (*.orig) and git apply --reject (*.rej)
+*.orig
+*.rej
+
+# Claude Code: personal settings, personal memory, and --worktree checkouts.
+# Claude Code appends the settings line to this file itself if it is
+# missing, which would leave chezmoi's copy out of date; keep it verbatim.
+**/.claude/settings.local.json
+CLAUDE.local.md
+.claude/worktrees/
+
+# mise: personal overrides of a project's mise.toml
+mise.local.toml
+mise.*.local.toml
+.mise.local.toml
+.mise.*.local.toml
+
+# Personal env overrides (Vite, Next.js and others never commit these).
+# Plain .env stays per repo: some projects commit it as shared defaults.
+.env.local
+.env.*.local

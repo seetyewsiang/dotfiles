@@ -30,18 +30,19 @@ Everything chezmoi manages lives in [`home/`](home) (set by `.chezmoiroot`).
 | `dot_gitconfig`        | `~/.gitconfig`           | Git identity, commit template              |
 | `dot_gitmessage`       | `~/.gitmessage`          | Commit template ([seven rules][beams])     |
 | `dot_config/gh/`       | `~/.config/gh/`          | GitHub CLI config                          |
-| `dot_config/git/`      | `~/.config/git/`         | Global gitignore                           |
+| `dot_config/git/`      | `~/.config/git/`         | Global gitignore ([why][gitignore])        |
 | `dot_config/mise/`     | `~/.config/mise/`        | Default tool versions (Node LTS)           |
 | `private_dot_claude/`  | `~/.claude/`             | Claude Code settings and `CLAUDE.md`       |
 | `dot_Brewfile`         | `~/.Brewfile`            | CLI tools, casks and App Store apps        |
 
-[`install.sh`](install.sh) and this README sit outside `home/`, so chezmoi
-never copies them.
+[`install.sh`](install.sh), [`docs/`](docs) and this README sit outside `home/`,
+so chezmoi never copies them.
 
 The `private_` prefix makes chezmoi create the file or directory with owner-only
 permissions.
 
 [beams]: https://cbea.ms/git-commit/
+[gitignore]: docs/gitignore.md
 
 ## Day-to-day
 
