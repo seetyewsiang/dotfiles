@@ -21,41 +21,17 @@ install.
 
 ## What's included
 
-Everything chezmoi manages lives in [`home/`](home) (set by `.chezmoiroot`).
+Shell config (zsh), Git, the GitHub CLI, mise, Claude Code settings, a
+Finder Quick Action, macOS app settings, and every app in the
+[Brewfile](home/dot_Brewfile). Everything chezmoi manages lives in
+[`home/`](home).
 
-| Source (in `home/`)    | Installed as             | Purpose                                    |
-| ---------------------- | ------------------------ | ------------------------------------------ |
-| `dot_zprofile`         | `~/.zprofile`            | Homebrew env, `~/.local/bin` on `PATH`     |
-| `dot_zshrc`            | `~/.zshrc`               | mise activation, Unity CLI env             |
-| `dot_gitconfig`        | `~/.gitconfig`           | Git identity, commit template              |
-| `dot_gitmessage`       | `~/.gitmessage`          | Commit template ([seven rules][beams])     |
-| `dot_config/gh/`       | `~/.config/gh/`          | GitHub CLI config                          |
-| `dot_config/git/`      | `~/.config/git/`         | Global gitignore ([why][gitignore])        |
-| `dot_config/mise/`     | `~/.config/mise/`        | Default tool versions (Node LTS)           |
-| `private_dot_claude/`  | `~/.claude/`             | Claude Code settings and `CLAUDE.md`       |
-| `dot_Brewfile`         | `~/.Brewfile`            | CLI tools, casks and App Store apps        |
+## Docs
 
-[`install.sh`](install.sh), [`docs/`](docs) and this README sit outside `home/`,
-so chezmoi never copies them.
+- [Managing the dotfiles](docs/managing-dotfiles.md): sync, add, edit and
+  remove dotfiles across your Macs.
+- [Global gitignore](docs/gitignore.md): what it ignores and why.
 
-The `private_` prefix makes chezmoi create the file or directory with owner-only
-permissions.
-
-[beams]: https://cbea.ms/git-commit/
-[gitignore]: docs/gitignore.md
-
-## Day-to-day
-
-```sh
-chezmoi edit ~/.zshrc   # edit the source copy of a dotfile
-chezmoi diff            # preview what apply would change
-chezmoi apply           # write changes to $HOME
-chezmoi update          # pull from GitHub and apply
-chezmoi cd              # open a shell in this repo
-```
-
-To add or remove an app, run `chezmoi edit ~/.Brewfile`, then `chezmoi apply`.
-The bundle script embeds the Brewfile's hash, so it re-runs whenever the
-Brewfile changes. Removing a line does not uninstall the app; run
-`brew bundle cleanup --global` to see what would be removed, then add
-`--force` to remove it.
+New to chezmoi? Start with its [quick start](https://www.chezmoi.io/quick-start/).
+Keep one clone of this repo, at `~/.local/share/chezmoi`, so changes don't
+get out of sync.
