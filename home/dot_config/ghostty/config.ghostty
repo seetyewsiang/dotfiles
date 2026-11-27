@@ -2,6 +2,17 @@
 #   ghostty +show-config --default --docs
 # Reload with Cmd+Shift+, after editing.
 
+# Roboto Mono with Nerd Font icons (Homebrew cask font-roboto-mono-nerd-font).
+font-family = RobotoMono Nerd Font Mono
+font-size = 12
+# Heavier strokes (macOS only); easier to read on a dark background.
+font-thicken = true
+
+# Block cursor everywhere. Shell integration would switch it to a bar at
+# the prompt, so turn off just that feature (the others stay on).
+cursor-style = block
+shell-integration-features = no-cursor
+
 # Follow macOS light/dark appearance.
 theme = light:GitHub Light Default,dark:GitHub Dark Default
 
