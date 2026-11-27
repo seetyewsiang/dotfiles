@@ -1,3 +1,11 @@
 [tools]
 node = "lts"
 python = "3.14"
+# shdoc: generates Markdown docs from shell comments. Needs gawk, which
+# comes from Homebrew (see .Brewfile). No release builds,
+# so fetch the single gawk script for the tag. Its shebang hardcodes
+# /usr/bin/gawk, which macOS lacks, so point it at gawk on PATH instead.
+[tools."http:shdoc"]
+version = "1.4"
+url = "https://raw.githubusercontent.com/reconquest/shdoc/v{{ version }}/shdoc"
+postinstall = "sed -i '' '1s|^#!.*|#!/usr/bin/env -S gawk -E|' \"$MISE_TOOL_INSTALL_PATH/shdoc\""

@@ -1,0 +1,41 @@
+#!/bin/sh
+# Keep the shell library docs in step with the code.
+#
+# When a commit touches home/dot_config/shell/lib/sh/, bash/ or zsh/:
+#   1. run every @example and refuse the commit if one no longer matches
+#   2. regenerate docs/ with shdoc and stage the result
+# Other commits are untouched. If shdoc or gawk is missing, it warns and
+# lets the commit through.
+#
+# Enabled per clone with: git config core.hooksPath .githooks
+# (done by home/.chezmoiscripts/run_once_after_50-git-hooks.sh.tmpl)
+
+set -eu
+
+lib=home/dot_config/shell/lib
+
+git diff --cached --name-only --diff-filter=ACMRD |
+    grep -qE "^$lib/(sh|bash|zsh)/" || exit 0
+
+# Relies on PATH from your shell profile (Homebrew for gawk, mise for
+# shdoc). GUI git apps don't load it, so from those the docs are skipped.
+if ! command -v gawk >/dev/null 2>&1; then
+    echo "pre-commit: gawk not found, skipping shell lib docs (run: brew install gawk)" >&2
+    exit 0
+fi
+if ! command -v shdoc >/dev/null 2>&1; then
+    echo "pre-commit: shdoc not found, skipping shell lib docs (run: mise install)" >&2
+    exit 0
+fi
+
+if ! git diff --quiet -- "$lib/sh" "$lib/bash" "$lib/zsh"; then
+    echo "pre-commit: note: unstaged changes in $lib; docs are built from the working tree" >&2
+fi
+
+if ! python3 -I tools/doctest-shell-lib.py "$lib"; then
+    echo "pre-commit: a documented example no longer matches; fix it or commit with --no-verify" >&2
+    exit 1
+fi
+
+sh "$lib/executable_gendocs.sh" >/dev/null
+git add -A -- "$lib/docs"

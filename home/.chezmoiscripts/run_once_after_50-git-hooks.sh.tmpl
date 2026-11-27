@@ -1,0 +1,7 @@
+#!/bin/sh
+# Use the repo's tracked hooks (.githooks/) in this dotfiles clone.
+# Hooks are not enabled by cloning, so set core.hooksPath once per machine.
+set -eu
+command -v git >/dev/null 2>&1 || { echo "git not found; skipping hooks setup" >&2; exit 0; }
+repo=$(git -C {{ .chezmoi.sourceDir | quote }} rev-parse --show-toplevel)
+git -C "$repo" config core.hooksPath .githooks
